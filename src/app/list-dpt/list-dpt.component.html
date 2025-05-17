@@ -1,0 +1,6 @@
+<h5>Lista de Departamentos</h5>
+
+<ul>
+    @for (departamentos of getDpts(); track $index)
+    {<li>{{departamentos.NombreDepartamento}}, {{departamentos.Descripcion}}</li>}
+</ul>
