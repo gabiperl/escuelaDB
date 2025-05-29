@@ -1,7 +1,25 @@
 <h5>Lista de Miembros</h5>
-<!-- <select>
+<select [(ngModel)]="dptID" (change)="getDptId(dpt.value)">
+    <!-- ¿NO VALDRÍA CON NGMODEL? -->
+     <!-- VALUES SON STRING -->
     <option value="0">Selecciona primero un departamento</option>
-    @for (departamentos of dpts; track $index)
-    {<option value="{{departamentos.NombreDepartamento}}">{{departamentos.NombreDepartamento}}</option>} -->
-    
-<!-- </select> -->
+    @for (departamento of getDpts(); track $index)
+    {<option value="{{departamento.DepartamentoID}}">{{departamento.NombreDepartamento}} </option>}
+</select>
+
+ <table>
+    <tr>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Email</th>
+        <th>Teléfono</th>
+    </tr>
+    @for (miembro of getMiembros(dpt); track $index)
+    {<tr>
+        <td>{{miembro.Nombre}}</td>
+        <td>{{miembro.Apellido}}</td>
+        <td>{{miembro.Email}}</td>
+        <td>{{miembro.Telefono}}</td>
+    </tr>}
+</table>
+

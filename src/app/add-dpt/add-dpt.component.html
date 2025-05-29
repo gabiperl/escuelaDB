@@ -1,1 +1,3 @@
-<p>add-dpt works!</p>
+<input #dptName type="text" placeholder="Nombre del nuevo departamento"><br>
+<textarea #dptDesc placeholder="Descripción del nuevo departamento"></textarea><br>
+<button (click)="addDpt(dptName.value, dptDesc.value)">Añadir departamento</button>
